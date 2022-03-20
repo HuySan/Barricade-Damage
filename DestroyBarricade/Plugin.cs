@@ -27,10 +27,8 @@ namespace BarricadeDamage
             int i = 0;
             foreach (var region in BarricadeManager.regions)
                 {               
-                    foreach(var drop in region.drops.ToList())//ToList() - foreva
-                    {
-                        
-                        Rocket.Core.Logging.Logger.Log("============" + drop.asset.name + "=====================================");
+                    foreach(var drop in region.drops.ToList())
+                    {                        
                         if(BarricadeManager.FindBarricadeByRootTransform(drop.model) != null)
                         {                           
                           if (Configuration.Instance.barricadeSettings.IsInWhiteList(drop.asset.id)) continue;
